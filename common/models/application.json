@@ -1,0 +1,9 @@
+{
+  "name": "application",
+  "base": "Application",
+  "properties": {},
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
