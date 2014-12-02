@@ -3,7 +3,7 @@
   "version": "0.0.0",
   "main": "server/server.js",
   "scripts": {
-    "pretest": "jshint ."
+    "test": "mocha tests/*"
   },
   "dependencies": {
     "compression": "^1.0.3",
@@ -20,6 +20,8 @@
   },
   "devDependencies": {
     "mocha": "^2.0.1",
-    "proxyquire": "^1.0.1"
+    "proxyquire": "^1.0.1",
+    "should": "^4.3.0",
+    "sinon": "^1.12.1"
   }
 }

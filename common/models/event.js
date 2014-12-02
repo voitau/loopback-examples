@@ -4,7 +4,9 @@ module.exports = function(Event) {
     var push = Event.app.models.push;
     var notification = Event.app.models.notification;
 
-    push.notifyByQuery({}, new notification({foo: 'bar'}), function (err) {
+    var createdEvent = this;
+
+    push.notifyByQuery({}, new notification({title: createdEvent.title}), function (err) {
       if (err) return next(err);
       next();
     });
