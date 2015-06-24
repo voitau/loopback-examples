@@ -1,10 +1,8 @@
-StrongLoop's [LoopBack.JS] (https://github.com/strongloop/loopback) playground
-============================
-Testing LoopBack push notifications
-----------------------------
-Requires [loopback-push-component](https://github.com/strongloop/loopback-component-push) and [Sinon.js](https://github.com/cjohansen/Sinon.JS).
+# Examples of [LoopBack.JS] (https://github.com/strongloop/loopback)
 
-```javascript
+## Testing LoopBack push notifications
+
+```
   ...
   beforeEach(function(done) {
     pushStub = sinon.stub(app.models.Push, 'notifyByQuery', function(query, notification, cb) { cb(); });
@@ -31,4 +29,5 @@ Requires [loopback-push-component](https://github.com/strongloop/loopback-compon
   });
   ...
 ```
-The rest of the code is in `tests/event.test.js`
+
+Full example is here: [push-notifications/](https://github.com/voitau/loopback-examples/push-notifications)
