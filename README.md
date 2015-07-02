@@ -3,7 +3,6 @@
 ## Testing LoopBack push notifications
 
 ```
-  ...
   beforeEach(function(done) {
     pushStub = sinon.stub(app.models.Push, 'notifyByQuery', function(query, notification, cb) { cb(); });
     done();
@@ -27,7 +26,6 @@
       done();
     });
   });
-  ...
 ```
 
 Full example is here: [push-notifications/](https://github.com/voitau/loopback-examples/tree/master/push-notifications)
