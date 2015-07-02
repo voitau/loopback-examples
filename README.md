@@ -1,4 +1,4 @@
-# Examples of [LoopBack.JS] (https://github.com/strongloop/loopback)
+# StrongLoop [LoopBack.JS] (https://github.com/strongloop/loopback) usage examples
 
 ## Testing LoopBack push notifications
 
@@ -30,4 +30,4 @@
   ...
 ```
 
-Full example is here: [push-notifications/](https://github.com/voitau/loopback-examples/push-notifications)
+Full example is here: [push-notifications/](https://github.com/voitau/loopback-examples/tree/master/push-notifications)
