@@ -1,6 +1,7 @@
 # StrongLoop [LoopBack.JS] (https://github.com/strongloop/loopback) usage examples
 
-## Testing LoopBack push notifications
+## Push notifications
+Shows how to set up and test push notifications.
 
 ```
   beforeEach(function(done) {
@@ -29,3 +30,20 @@
 ```
 
 Full example is here: [push-notifications/](https://github.com/voitau/loopback-examples/tree/master/push-notifications)
+
+## Mongo connector
+Shows how to use custom mongo operators.
+
+```
+  petition.updateAttributes({$set: {description: 'v1'}, '$inc': {version: 1}}, function(err, petitionUpdated) {
+    if (err) return done(err);
+    Petition.findById(petitionUpdated.id, function(err, petitionFound) {
+      if (err) return done(err);
+      petitionFound.description.should.eql('v1');
+      petitionFound.version.should.eql(1);
+      done();
+    });
+  });
+```
+
+Full example is here: [mongo-connector/](https://github.com/voitau/loopback-examples/tree/master/mongo-connector)

@@ -1,0 +1,20 @@
+{
+  "name": "Petition",
+  "plural": "petitions",
+  "base": "PersistedModel",
+  "properties": {
+    "version": {
+      "type": "number",
+      "required": true,
+      "default": 0
+    },
+    "description": {
+      "type": "string",
+      "required": true
+    }
+  },
+  "validations": [],
+  "relations": {},
+  "acls": [],
+  "methods": []
+}
