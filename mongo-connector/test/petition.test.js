@@ -27,7 +27,7 @@ describe('petitions', function() {
     });
 
     // TODO: fix. ignores the rest of update instructions if $- operator is present.
-    it('should update description and increment version without $set', function(done) {
+    it('should update description without $set and increment version', function(done) {
       petition.updateAttributes({description: 'v1', '$inc': {version: 1}}, function(err, petitionUpdated) {
         if (err) return done(err);
         Petition.findById(petitionUpdated.id, function(err, petitionFound) {
@@ -41,8 +41,8 @@ describe('petitions', function() {
 
     // TODO: fix. updateAttributes() does not return updated instance, as it supposed to:
     // http://docs.strongloop.com/display/LB/PersistedModel+class#persistedmodel-prototype-updateattributes
-    it('should update description and increment version and return updated model instance', function(done) {
-      petition.updateAttributes({$set: {description: 'v1'}, '$inc': {version: 1}}, function(err, petitionUpdated) {
+    it('should update description, increment version and return updated model instance', function(done) {
+      petition.updateAttributes({'$set': {description: 'v1'}, '$inc': {version: 1}}, function(err, petitionUpdated) {
         if (err) return done(err);
         petitionUpdated.description.should.eql('v1');
         petitionUpdated.version.should.eql(1);
@@ -53,8 +53,8 @@ describe('petitions', function() {
     // Work around:
     // - use $set implicitly;
     // - findById to get updated model instance.
-    it('should update description increment petition version on update with workarounds', function(done) {
-      petition.updateAttributes({$set: {description: 'v1'}, '$inc': {version: 1}}, function(err, petitionUpdated) {
+    it('should update description and increment version with workarounds', function(done) {
+      petition.updateAttributes({'$set': {description: 'v1'}, '$inc': {version: 1}}, function(err, petitionUpdated) {
         if (err) return done(err);
         Petition.findById(petitionUpdated.id, function(err, petitionFound) {
           if (err) return done(err);

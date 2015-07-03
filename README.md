@@ -3,7 +3,7 @@
 ## Push notifications
 Shows how to set up and test push notifications.
 
-```
+```javascript
   beforeEach(function(done) {
     pushStub = sinon.stub(app.models.Push, 'notifyByQuery', function(query, notification, cb) { cb(); });
     done();
@@ -34,8 +34,8 @@ Full example is here: [push-notifications/](https://github.com/voitau/loopback-e
 ## Mongo connector
 Shows how to use custom mongo operators.
 
-```
-  petition.updateAttributes({$set: {description: 'v1'}, '$inc': {version: 1}}, function(err, petitionUpdated) {
+```javascript
+  petition.updateAttributes({'$set': {description: 'v1'}, '$inc': {version: 1}}, function(err, petitionUpdated) {
     if (err) return done(err);
     Petition.findById(petitionUpdated.id, function(err, petitionFound) {
       if (err) return done(err);
