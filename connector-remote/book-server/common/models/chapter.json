@@ -1,0 +1,23 @@
+{
+  "name": "Chapter",
+  "base": "PersistedModel",
+  "idInjection": true,
+  "options": {
+    "validateUpsert": true
+  },
+  "properties": {
+    "title": {
+      "type": "string"
+    }
+  },
+  "validations": [],
+  "relations": {
+    "book": {
+      "type": "belongsTo",
+      "model": "Book",
+      "foreignKey": ""
+    }
+  },
+  "acls": [],
+  "methods": {}
+}
